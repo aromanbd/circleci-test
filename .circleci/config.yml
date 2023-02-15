@@ -4,6 +4,9 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: cimg/node:18.14.0
+        auth:
+          username: aromanbd
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:
