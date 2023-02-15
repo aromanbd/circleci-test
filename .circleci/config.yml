@@ -79,7 +79,7 @@ workflows:
             branches:
               only:
                 - dev
-  build_master:
+  build_main:
     jobs:
       - build_master:
           filters:
