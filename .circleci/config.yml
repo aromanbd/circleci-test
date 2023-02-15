@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build_all:
+  build_feature:
     working_directory: ~/repo
     docker:
       - image: 'cimg/node:18.14.0'
@@ -66,23 +66,28 @@ jobs:
       - run:
           name: Run lint 2
           command: npm run lint
+parameters:
+  my_trigger_parameter:
+    type: string
+    default: ''
 workflows:
-  build_all:
+  feature:
+    when: << pipeline.parameters.my_trigger_parameter >>
     jobs:
-      - build_all:
+      - build_feature:
           filters:
             branches:
               ignore:
                 - dev
                 - main
-  build_dev:
+  dev:
     jobs:
       - build_dev:
           filters:
             branches:
               only:
                 - dev
-  build_main:
+  main:
     jobs:
       - build_main:
           filters:
