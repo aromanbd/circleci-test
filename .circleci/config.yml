@@ -81,7 +81,7 @@ workflows:
                 - dev
   build_main:
     jobs:
-      - build_master:
+      - build_main:
           filters:
             branches:
               only:
