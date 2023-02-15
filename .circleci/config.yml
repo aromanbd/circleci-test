@@ -1,7 +1,6 @@
 version: 2.1
 jobs:
   build:
-    context: context_test
     working_directory: ~/repo
     docker:
       - image: cimg/node:18.14.0
