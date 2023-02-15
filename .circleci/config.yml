@@ -4,9 +4,6 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: cimg/node:18.14.0
-        auth:
-          username: a.roman@biotech-dental.com
-          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run:
