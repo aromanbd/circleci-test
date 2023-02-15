@@ -64,7 +64,7 @@ jobs:
           name: Run lint
           command: npm run lint
 workflows:
-  version: 2
+  version: 2.1
   build_all:    
     jobs:
       - build_all:
